@@ -6,10 +6,10 @@ from cryptography.hazmat.primitives.kdf.pbkdf2 import PBKDF2HMAC
 def Hash(password):
     salt = bcrypt.gensalt()
     passwd = bcrypt.hashpw(bytes(password, "utf-8"), salt)
-    return passwd.decode("utf-8")
+    return passwd
 
 def GenKey(base):
-    base = base.encode()
+    base = base
     salt = b"salt_" # change this later
     kdf = PBKDF2HMAC(
         algorithm   = hashes.SHA256(),
