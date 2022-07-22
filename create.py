@@ -19,4 +19,3 @@ def create():
         with open(f"passes.txt", "a") as f:
             f.write(f"{title}: {passwd.decode()}\n")
 
-create()

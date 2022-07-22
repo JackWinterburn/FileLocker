@@ -1,6 +1,5 @@
 import bcrypt
 import os.path
-from hash import GenKey
 from cryptography.fernet import Fernet
 
 def read():
@@ -39,5 +38,3 @@ def findPass(filename):
         end        = content.find("\n", start)
         hashedPswd = content[start+len(filename)+2:end]
         return hashedPswd
-
-read()

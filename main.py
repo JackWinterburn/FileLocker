@@ -1,10 +1,14 @@
-action = input("What would you like to do? (view, create or delete)")
+from delete import delete
+from create import create
+from read import read
 
-if action == "view":
-    pass
+action = input("What would you like to do? (read, create or delete)")
+
+if action == "read":
+    read()
 elif action == "create":
-    pass
+    create()
 elif action == "delete":
-    pass
+    delete()
 else:
     print("Looks like you typed in a non-existant command.")
