@@ -1,5 +1,5 @@
 import os.path
-from hash import Hash, GenKey, bcrypt
+from hash import Hash, GenKey
 from cryptography.fernet import Fernet
 
 def create():
@@ -15,8 +15,8 @@ def create():
         raise Exception("File already exists, unable to overwrite locked file")
     else:         
         with open(f"./lockers/{title}.txt", "w") as f:
-            f.write(encrypted_content.decode())
+            f.write(f"{encrypted_content.decode()}-||-{key.decode()}")
         with open(f"passes.txt", "a") as f:
-            f.write(f"\n{title}: {passwd.decode()}")
+            f.write(f"{title}: {passwd.decode()}\n")
 
 create()

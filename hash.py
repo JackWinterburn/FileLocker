@@ -5,7 +5,7 @@ from cryptography.hazmat.primitives.kdf.pbkdf2 import PBKDF2HMAC
 
 def Hash(password):
     salt = bcrypt.gensalt()
-    passwd = bcrypt.hashpw(bytes(password, "utf-8"), salt)
+    passwd = bcrypt.hashpw(password.encode(), salt)
     return passwd
 
 def GenKey(base):
